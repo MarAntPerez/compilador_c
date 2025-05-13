@@ -44,8 +44,20 @@ public class Lexer
                     case '+':
                         tokens.add(new Token("MAS", "+"));
                         break;
+                    case '-':
+                        tokens.add(new Token("MENOS", "-"));
+                        break;
+                    case '*':
+                        tokens.add(new Token("MULT", "*"));
+                        break;
+                    case '/':
+                        tokens.add(new Token("DIV", "/"));
+                        break;
                     case '>':
                         tokens.add(new Token("MAYOR", ">"));
+                        break;
+                    case '<':
+                        tokens.add(new Token("MENOR", "<"));
                         break;
                     case '(':
                         tokens.add(new Token("PARENA", "("));
@@ -98,6 +110,18 @@ public class Lexer
         if (palabra.equals("if"))
         {
             return new Token("IF", palabra);
+        }
+        if (palabra.equals("while"))
+        {
+            return new Token("WHILE", palabra);
+        }
+        if (palabra.equals("for"))
+        {
+            return new Token("FOR", palabra);
+        }
+        if (palabra.equals("void"))
+        {
+            return new Token("VOID", palabra);
         }
         return new Token("ID", palabra);
     }

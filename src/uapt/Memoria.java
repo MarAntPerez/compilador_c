@@ -14,6 +14,7 @@ import java.util.Map;
 class Memoria
 {
     private static Map<String, Integer> tabla = new HashMap<>();
+    private static Map<String, NodoFuncion> funciones = new HashMap<>();
     
     public static void set(String id, int valor){
         tabla.put(id, valor);
@@ -25,5 +26,13 @@ class Memoria
     
     public static void imprimir(){
         System.out.println(tabla);
+    }
+    
+    public static void registrarFuncion(String nombre, NodoFuncion f){
+        funciones.put(nombre, f);
+    }
+    
+    public static NodoFuncion obtenerFuncion(String nombre){
+        return funciones.get(nombre);
     }
 }

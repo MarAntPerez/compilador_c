@@ -8,22 +8,20 @@ package uapt;
  *
  * @author Mar
  */
-public class NodoAsignacion extends Nodo
+public class NodoVariable extends Nodo
 {
-    
-    String id;
-    Nodo expresion;
 
-    public NodoAsignacion(String id, Nodo expresion)
+    String id;
+
+    public NodoVariable(String id)
     {
         this.id = id;
-        this.expresion = expresion;
     }
-
+    
     @Override
     public void ejecutar()
     {
-        Memoria.set(id, ((NodoExpresion) expresion).evaluar());
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
